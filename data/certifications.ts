@@ -29,4 +29,13 @@ export const certifications: Certification[] = [
     credentialId: "",
     credentialUrl: "https://academy.opus.com/certificate/technical?name=Prakash%20M",
   },
+  {
+    id: "building-with-claude-api",
+    name: "Building with the Claude API",
+    issuer: "Anthropic",
+    category: "AI Engineering",
+    year: "",
+    credentialId: "",
+    credentialUrl: "https://verify.skilljar.com/c/8ye2nwaprzqf",
+  },
 ];
