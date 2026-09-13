@@ -9,7 +9,7 @@ export function Observability() {
     <section className="relative py-24">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
-          eyebrow="12 · Observability"
+          eyebrow="13 · Observability"
           title="Observability"
           description="If it isn't observable, it isn't operable — metrics, logs and traces feeding one place."
         />

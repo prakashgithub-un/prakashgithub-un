@@ -29,7 +29,7 @@ export function InfrastructureAsCode() {
     <section className="relative py-24">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="05 · Infrastructure as Code"
+          eyebrow="06 · Infrastructure as Code"
           title="Terraform"
           description="Modules, not one-off scripts — environments separated deliberately, state managed remotely."
         />

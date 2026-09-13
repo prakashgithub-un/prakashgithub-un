@@ -19,7 +19,7 @@ export function CICD() {
     <section className="relative py-24">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="06 · CI/CD"
+          eyebrow="07 · CI/CD"
           title="Delivery Pipelines"
           description="From commit to running in a cluster, with a monitoring loop back to the deploy that caused it."
         />

@@ -22,7 +22,7 @@ export function KubernetesLab() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
-            04 · Kubernetes
+            05 · Kubernetes
           </span>
           <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-semibold uppercase leading-snug tracking-tight text-ink sm:text-3xl md:text-4xl">
             Containers are easy.

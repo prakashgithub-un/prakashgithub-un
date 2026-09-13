@@ -35,7 +35,7 @@ export function HybridApiGateway() {
     <section className="relative py-28">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="14 · Signature Project"
+          eyebrow="15 · Signature Project"
           title="Securing Legacy APIs Across Hybrid Infrastructure"
           description="Azure API Management as a centralized security and governance layer for Azure, on-premises and AWS-hosted applications."
           align="center"

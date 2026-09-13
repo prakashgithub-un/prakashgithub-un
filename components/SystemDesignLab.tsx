@@ -15,7 +15,7 @@ export function SystemDesignLab() {
     <section id="engineering-lab" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="09 · Engineering Lab"
+          eyebrow="10 · Engineering Lab"
           title="System Design Lab"
           description="Pick a scenario to see how I'd reason through it — requirements, architecture, scaling, security and the trade-offs that come with each."
         />

@@ -30,7 +30,7 @@ export function AutomationLab() {
     <section className="relative py-28">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="10 · Automation Engine"
+          eyebrow="11 · Automation Engine"
           title="Automation Engine"
           description="Automation isn't the code — it's what the code lets me stop doing by hand. Select a system to see what runs underneath."
           align="center"

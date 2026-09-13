@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
+import { Certifications } from "@/components/Certifications";
 import { SkillMatrix } from "@/components/SkillMatrix";
 import { KubernetesLab } from "@/components/KubernetesLab";
 import { InfrastructureAsCode } from "@/components/InfrastructureAsCode";
@@ -17,7 +18,6 @@ import { HybridApiGateway } from "@/components/HybridApiGateway";
 import { Projects } from "@/components/Projects";
 import { Metrics } from "@/components/Metrics";
 import { Roadmap } from "@/components/Roadmap";
-import { Certifications } from "@/components/Certifications";
 import { Posts } from "@/components/Posts";
 import { GithubActivity } from "@/components/GithubActivity";
 import { CurrentlyDeveloping } from "@/components/CurrentlyDeveloping";
@@ -32,6 +32,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
+        <Certifications />
         <SkillMatrix />
         <KubernetesLab />
         <InfrastructureAsCode />
@@ -47,7 +48,6 @@ export default function Home() {
         <Projects />
         <Metrics />
         <Roadmap />
-        <Certifications />
         <Posts />
         <GithubActivity />
         <CurrentlyDeveloping />

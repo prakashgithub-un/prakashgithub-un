@@ -20,7 +20,7 @@ export function Security() {
     <section className="relative py-24">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
-          eyebrow="07 · DevSecOps"
+          eyebrow="08 · DevSecOps"
           title="Security By Design"
           description="Security treated as layers around the application, not a single gate before deploy."
         />

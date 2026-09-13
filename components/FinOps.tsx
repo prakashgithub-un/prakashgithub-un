@@ -9,7 +9,7 @@ export function FinOps() {
     <section className="relative py-24">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
-          eyebrow="13 · Cloud FinOps"
+          eyebrow="14 · Cloud FinOps"
           title="Cloud FinOps"
           description="Cost as a first-class signal — visible, attributable and actionable across every provider."
         />

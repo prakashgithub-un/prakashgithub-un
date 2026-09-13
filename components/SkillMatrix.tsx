@@ -20,7 +20,7 @@ export function SkillMatrix() {
     <section id="skills" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="03 · Skills"
+          eyebrow="04 · Skills"
           title="Three Environments, One Operator"
           description="Not a logo wall — an honest read on where each platform sits: shipped in production, or actively being built up."
         />

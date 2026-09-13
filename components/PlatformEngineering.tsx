@@ -9,7 +9,7 @@ export function PlatformEngineering() {
     <section className="relative py-24">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
-          eyebrow="11 · Platform Engineering"
+          eyebrow="12 · Platform Engineering"
           title="Platform Engineering"
           description="Treating infrastructure as a product for developers to self-serve — not a ticket queue."
         />

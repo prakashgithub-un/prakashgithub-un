@@ -20,7 +20,7 @@ export function CloudArchitecture() {
     <section id="architecture" className="relative py-28">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="08 · Cloud Architecture"
+          eyebrow="09 · Cloud Architecture"
           title="Designing For Failure"
           description="A highly-available reference architecture. Hover any layer to trace the request path — or inject a failure below and watch it adapt."
           align="center"
