@@ -69,10 +69,10 @@ export function ArchitectureDiagram({
                   isHighlighted
                     ? "#22d3ee"
                     : brokenLink
-                      ? "rgba(248,113,113,0.25)"
-                      : "rgba(255,255,255,0.12)"
+                      ? "rgba(248,113,113,0.35)"
+                      : "rgba(255,255,255,0.28)"
                 }
-                strokeWidth={isHighlighted ? 2 : 1}
+                strokeWidth={isHighlighted ? 2.5 : 1.5}
                 strokeDasharray={brokenLink ? "3 4" : undefined}
               />
               {isHighlighted && (

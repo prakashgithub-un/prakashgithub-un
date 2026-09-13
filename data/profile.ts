@@ -2,7 +2,6 @@
 // Leave fields empty until you have the real values — nothing here is invented.
 export const profile = {
   name: "Prakash",
-  initials: "PR",
   role: "DevOps Engineer | Cloud Infrastructure | Kubernetes | Automation",
   roleLong: "DevOps Engineer / Cloud Engineer",
   careerDirection: "Senior DevOps Engineer / Cloud Engineer / Platform Engineer",

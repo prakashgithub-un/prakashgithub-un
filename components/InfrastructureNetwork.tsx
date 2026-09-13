@@ -97,8 +97,8 @@ export function InfrastructureNetwork() {
             y1={from.y}
             x2={to.x}
             y2={to.y}
-            stroke={isActive ? "#22d3ee" : "rgba(148,163,184,0.18)"}
-            strokeWidth={isActive ? 0.25 : 0.15}
+            stroke={isActive ? "#22d3ee" : "rgba(148,163,184,0.35)"}
+            strokeWidth={isActive ? 0.35 : 0.22}
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: isDimmed ? 0.3 : 1 }}
             transition={{

@@ -19,7 +19,10 @@ export function FlowDiagram({ steps }: { steps: FlowStage[] }) {
             <FlowNode label={step.label} sublabel={step.sublabel} delay={i * 0.06} />
           )}
           {i < steps.length - 1 && (
-            <ArrowDown size={14} className="text-accent-cyan/50 animate-pulse-slow" />
+            <div className="flex flex-col items-center">
+              <span className="h-4 w-[2px] rounded-full bg-gradient-to-b from-accent-cyan/70 to-accent-cyan/30" />
+              <ArrowDown size={16} className="-mt-1 text-accent-cyan animate-pulse-slow" strokeWidth={2.5} />
+            </div>
           )}
         </div>
       ))}
@@ -42,7 +45,7 @@ function FlowNode({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
-      className="rounded-lg border border-base-border bg-base-800/70 px-4 py-2 text-center font-mono text-xs text-white transition-colors hover:border-accent-cyan/60 hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.5)]"
+      className="rounded-lg border border-base-600 bg-base-800/70 px-4 py-2 text-center font-mono text-xs text-white transition-colors hover:border-accent-cyan/60 hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.5)]"
     >
       <div>{label}</div>
       {sublabel && <div className="mt-0.5 text-[10px] text-muted">{sublabel}</div>}

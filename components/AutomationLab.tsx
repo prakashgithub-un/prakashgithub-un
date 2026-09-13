@@ -48,8 +48,8 @@ export function AutomationLab() {
                 y1={ENGINE.y}
                 x2={JUNCTION.x}
                 y2={JUNCTION.y}
-                stroke="rgba(148,163,184,0.3)"
-                strokeWidth={0.3}
+                stroke="rgba(148,163,184,0.5)"
+                strokeWidth={0.55}
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -62,8 +62,8 @@ export function AutomationLab() {
                   y1={JUNCTION.y}
                   x2={sys.x}
                   y2={sys.y}
-                  stroke="rgba(148,163,184,0.3)"
-                  strokeWidth={0.3}
+                  stroke="rgba(148,163,184,0.5)"
+                  strokeWidth={0.55}
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
@@ -77,8 +77,8 @@ export function AutomationLab() {
                   y1={sys.y}
                   x2={stepPositions[i].x}
                   y2={stepPositions[i].y}
-                  stroke="rgba(34,211,238,0.35)"
-                  strokeWidth={0.3}
+                  stroke="rgba(34,211,238,0.55)"
+                  strokeWidth={0.55}
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.4, delay: 1.0 + i * 0.12 }}
@@ -92,8 +92,8 @@ export function AutomationLab() {
                   y1={step.y}
                   x2={CONVERGE.x}
                   y2={CONVERGE.y}
-                  stroke="rgba(148,163,184,0.3)"
-                  strokeWidth={0.3}
+                  stroke="rgba(148,163,184,0.5)"
+                  strokeWidth={0.55}
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.4, delay: 1.7 + i * 0.08 }}
@@ -105,8 +105,8 @@ export function AutomationLab() {
                 y1={CONVERGE.y}
                 x2={WORKFLOW.x}
                 y2={WORKFLOW.y}
-                stroke="rgba(52,211,153,0.4)"
-                strokeWidth={0.3}
+                stroke="rgba(52,211,153,0.6)"
+                strokeWidth={0.6}
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.4, delay: 2.1 }}
@@ -223,7 +223,7 @@ function FlowParticle({
   color: string;
 }) {
   return (
-    <circle r={0.6} fill={color}>
+    <circle r={0.85} fill={color}>
       <animateMotion
         dur="1.6s"
         begin={`${delay}s`}

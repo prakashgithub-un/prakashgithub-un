@@ -38,9 +38,9 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <a
           href="#top"
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-base-border bg-base-800 font-mono text-sm font-bold text-white"
+          className="flex h-9 items-center rounded-md border border-base-border bg-base-800 px-3 font-mono text-sm font-bold text-white"
         >
-          {profile.initials}
+          {profile.name}
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
