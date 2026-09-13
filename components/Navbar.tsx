@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { profile } from "@/data/profile";
+import { useScrollSpy } from "@/lib/useScrollSpy";
 
 const links = [
   { href: "#about", label: "About" },
@@ -19,6 +20,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const activeId = useScrollSpy(links.map((l) => l.href.slice(1)));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -42,16 +44,21 @@ export function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm text-muted transition-colors hover:text-white"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {links.map((link) => {
+            const isActive = activeId === link.href.slice(1);
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={`text-sm transition-colors ${
+                    isActive ? "text-white" : "text-muted hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden items-center gap-2 md:flex">

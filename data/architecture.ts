@@ -36,6 +36,66 @@ export const cloudArchitectureEdges: DiagramEdge[] = [
   { from: "observability", to: "traces" },
 ];
 
+export interface FailureScenario {
+  id: string;
+  label: string;
+  description: string;
+  inactiveNodeIds: string[];
+  pulsingNodeIds?: string[];
+  rerouteEdges?: [string, string][];
+}
+
+// Illustrates HA design principles on the reference architecture above —
+// a conceptual walkthrough, not a log of real incidents.
+export const failureScenarios: FailureScenario[] = [
+  {
+    id: "database-failure",
+    label: "Database Failure",
+    description:
+      "The primary database becomes unreachable. Reads degrade to the cache tier while the database is restored from standby.",
+    inactiveNodeIds: ["database", "storage"],
+    rerouteEdges: [["app", "cache"]],
+  },
+  {
+    id: "node-failure",
+    label: "Node Failure",
+    description:
+      "One Kubernetes node pool goes down. The load balancer stops routing to it — the healthy node pool absorbs all traffic.",
+    inactiveNodeIds: ["k8s-a"],
+    rerouteEdges: [
+      ["waf-lb", "k8s-b"],
+      ["k8s-b", "app"],
+    ],
+  },
+  {
+    id: "az-failure",
+    label: "AZ Failure",
+    description:
+      "An entire availability zone drops offline, taking its compute and messaging path with it. Traffic and processing shift entirely to the healthy zone.",
+    inactiveNodeIds: ["k8s-a", "queue"],
+    rerouteEdges: [
+      ["waf-lb", "k8s-b"],
+      ["k8s-b", "app"],
+    ],
+  },
+  {
+    id: "traffic-spike",
+    label: "Traffic Spike",
+    description:
+      "A sudden spike in demand. The load balancer and both node pools scale out to absorb it — no manual intervention needed.",
+    inactiveNodeIds: [],
+    pulsingNodeIds: ["waf-lb", "k8s-a", "k8s-b"],
+  },
+  {
+    id: "service-failure",
+    label: "Service Failure",
+    description:
+      "An application pod fails its liveness probe. Kubernetes reschedules it automatically — briefly degraded, self-healing without a page.",
+    inactiveNodeIds: ["app"],
+    pulsingNodeIds: ["k8s-a", "k8s-b"],
+  },
+];
+
 export interface FlowStep {
   label: string;
   sublabel?: string;

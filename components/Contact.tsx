@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail, FileDown } from "lucide-react";
 import { profile } from "@/data/profile";
 import { Reveal } from "./Reveal";
+import { MagneticButton } from "./MagneticButton";
 
 export function Contact() {
   return (
@@ -47,20 +48,28 @@ function ContactLink({
   label: string;
 }) {
   const disabled = !href;
+
+  if (disabled) {
+    return (
+      <span
+        aria-disabled
+        className="inline-flex cursor-not-allowed items-center gap-2 rounded-md border border-base-border px-5 py-3 text-sm font-medium text-muted/50"
+      >
+        <Icon size={16} />
+        {label}
+      </span>
+    );
+  }
+
   return (
-    <a
-      href={disabled ? undefined : href}
-      target={disabled ? undefined : "_blank"}
+    <MagneticButton
+      href={href}
+      target="_blank"
       rel="noreferrer"
-      aria-disabled={disabled}
-      className={`inline-flex items-center gap-2 rounded-md border px-5 py-3 text-sm font-medium transition-colors ${
-        disabled
-          ? "cursor-not-allowed border-base-border text-muted/50"
-          : "border-base-border bg-base-900/60 text-white hover:bg-base-800"
-      }`}
+      className="inline-flex items-center gap-2 rounded-md border border-base-border bg-base-900/60 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-base-800"
     >
       <Icon size={16} />
       {label}
-    </a>
+    </MagneticButton>
   );
 }

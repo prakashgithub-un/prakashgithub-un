@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { AmbientBackground } from "@/components/AmbientBackground";
+import { InfrastructureSpine } from "@/components/InfrastructureSpine";
 import "./globals.css";
 
 const inter = Inter({
@@ -59,7 +61,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-base-950 font-sans">{children}</body>
+      <body className="min-h-screen bg-base-950 font-sans">
+        <AmbientBackground />
+        <InfrastructureSpine />
+        {children}
+      </body>
     </html>
   );
 }

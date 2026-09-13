@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence, useInView, useScroll } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { experience } from "@/data/experience";
 import { SectionHeading } from "./SectionHeading";
@@ -9,6 +9,11 @@ import { Reveal } from "./Reveal";
 
 export function Experience() {
   const [openId, setOpenId] = useState<string | null>(experience[0]?.id ?? null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 0.75", "end 0.4"],
+  });
 
   return (
     <section id="experience" className="relative py-28">
@@ -19,8 +24,12 @@ export function Experience() {
           description="A timeline of infrastructure roles, each expandable for the details."
         />
 
-        <div className="relative mt-16">
+        <div ref={containerRef} className="relative mt-16">
           <div className="absolute left-[15px] top-2 bottom-2 w-px bg-base-border sm:left-[19px]" />
+          <motion.div
+            style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
+            className="absolute left-[15px] top-2 bottom-2 w-px bg-gradient-to-b from-accent via-accent-cyan to-accent-cyan sm:left-[19px]"
+          />
 
           <ul className="space-y-4">
             {experience.map((entry, i) => {
@@ -56,12 +65,12 @@ export function Experience() {
                         </div>
                         <div className="flex items-center gap-4">
                           {entry.highlight && (
-                            <span className="hidden font-mono text-lg font-bold text-accent-cyan sm:block">
-                              {entry.highlight.value}{" "}
+                            <div className="hidden items-baseline gap-1.5 sm:flex">
+                              <CinematicNumber value={entry.highlight.value} />
                               <span className="text-xs font-normal uppercase text-muted">
                                 {entry.highlight.label}
                               </span>
-                            </span>
+                            </div>
                           )}
                           <span className="font-mono text-xs text-muted">{entry.period}</span>
                           <ChevronDown
@@ -91,8 +100,8 @@ export function Experience() {
                               ))}
                             </div>
                             {entry.highlight && (
-                              <div className="mt-3 font-mono text-2xl font-bold text-accent-cyan sm:hidden">
-                                {entry.highlight.value}{" "}
+                              <div className="mt-3 flex items-baseline gap-1.5 sm:hidden">
+                                <CinematicNumber value={entry.highlight.value} />
                                 <span className="text-xs font-normal uppercase text-muted">
                                   {entry.highlight.label}
                                 </span>
@@ -110,5 +119,35 @@ export function Experience() {
         </div>
       </div>
     </section>
+  );
+}
+
+function CinematicNumber({ value }: { value: string }) {
+  const numeric = parseInt(value.replace(/\D/g, ""), 10);
+  const suffix = value.replace(/[0-9]/g, "");
+  const isNumeric = !Number.isNaN(numeric) && numeric > 0;
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView || !isNumeric) return;
+    const duration = 1000;
+    const start = performance.now();
+    let raf: number;
+    function tick(now: number) {
+      const progress = Math.min((now - start) / duration, 1);
+      setDisplay(Math.floor(progress * numeric));
+      if (progress < 1) raf = requestAnimationFrame(tick);
+    }
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, isNumeric, numeric]);
+
+  return (
+    <span ref={ref} className="font-mono text-2xl font-bold text-accent-cyan sm:text-3xl">
+      {isNumeric ? display : value}
+      {isNumeric ? suffix : ""}
+    </span>
   );
 }
