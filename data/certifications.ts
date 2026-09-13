@@ -18,7 +18,7 @@ export const certifications: Certification[] = [
     category: "Cloud Architecture",
     year: "",
     credentialId: "",
-    credentialUrl: "",
+    credentialUrl: "https://www.credly.com/badges/cb27634e-f722-4b10-a749-f0e22f36c28f/linked_in_profile",
   },
   {
     id: "opus-technical-specialist",
@@ -27,6 +27,6 @@ export const certifications: Certification[] = [
     category: "Technical Specialization",
     year: "",
     credentialId: "",
-    credentialUrl: "",
+    credentialUrl: "https://academy.opus.com/certificate/technical?name=Prakash%20M",
   },
 ];
