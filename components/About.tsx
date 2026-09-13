@@ -12,7 +12,7 @@ export function About() {
       <div className="relative mx-auto max-w-4xl px-6">
         <SectionHeading
           eyebrow="01 · About"
-          title="Engineer Behind The Infrastructure"
+          title="Let Me Introduce Myself"
           align="center"
         />
         <div className="mt-10 space-y-6">

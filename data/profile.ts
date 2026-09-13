@@ -25,9 +25,9 @@ export const profile = {
     "DevOps Engineer focused on cloud infrastructure, Kubernetes, Infrastructure as Code, CI/CD, observability and automation, with a growing focus on cloud architecture, security, platform engineering and scalable production systems.",
 
   about: [
-    "I'm a DevOps Engineer focused on transforming infrastructure into automated, observable and reliable systems.",
-    "My experience spans AWS, Azure, Kubernetes, Terraform, CI/CD and observability. I enjoy solving infrastructure problems, improving deployment workflows and designing systems that are easier to operate and scale.",
-    "My engineering journey is increasingly focused on cloud architecture, platform engineering, security, advanced Kubernetes and automation.",
+    "Hey, I'm Prakash — a DevOps Engineer who genuinely enjoys taking messy, fragile infrastructure and turning it into something automated, observable and reliable.",
+    "Day to day, I'm usually somewhere in AWS, Azure, Kubernetes, Terraform, CI/CD or an observability stack. I like the kind of problem where a deployment that used to take an afternoon of manual steps turns into a five-minute pipeline run.",
+    "Right now I'm pushing further into cloud architecture, platform engineering, security and advanced Kubernetes — the stuff that turns \"it works\" into \"it works reliably, at scale, without anyone getting paged at 2am.\"",
   ],
 } as const;
 
