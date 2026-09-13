@@ -12,7 +12,7 @@ export function GithubActivity() {
     <section id="github" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="17 · GitHub"
+          eyebrow="18 · GitHub"
           title="Code / Automation / Infrastructure"
           description={
             username

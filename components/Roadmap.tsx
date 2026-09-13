@@ -13,7 +13,7 @@ export function Roadmap() {
     <section className="relative py-28">
       <div className="mx-auto max-w-2xl px-6">
         <SectionHeading
-          eyebrow="16 · Direction"
+          eyebrow="17 · Direction"
           title="Where I'm Heading"
           description="Growth in progress, not expertise already claimed."
           align="center"

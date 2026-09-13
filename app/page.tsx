@@ -13,6 +13,7 @@ import { AutomationLab } from "@/components/AutomationLab";
 import { PlatformEngineering } from "@/components/PlatformEngineering";
 import { Observability } from "@/components/Observability";
 import { FinOps } from "@/components/FinOps";
+import { HybridApiGateway } from "@/components/HybridApiGateway";
 import { Projects } from "@/components/Projects";
 import { Metrics } from "@/components/Metrics";
 import { Roadmap } from "@/components/Roadmap";
@@ -40,6 +41,7 @@ export default function Home() {
         <PlatformEngineering />
         <Observability />
         <FinOps />
+        <HybridApiGateway />
         <Projects />
         <Metrics />
         <Roadmap />
