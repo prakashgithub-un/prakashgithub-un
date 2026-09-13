@@ -47,7 +47,7 @@ export function GithubActivity() {
                     href={profile.github || `https://github.com/${username}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] text-accent-cyan transition-colors hover:text-white"
+                    className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] text-accent-cyan transition-colors hover:text-ink"
                   >
                     View @{username} on GitHub
                     <ExternalLink size={11} />
@@ -72,7 +72,7 @@ function PlaceholderStat({ icon: Icon, label }: { icon: typeof Star; label: stri
   return (
     <div className="rounded-xl border border-base-border bg-base-950/60 p-6 text-center">
       <Icon size={20} className="mx-auto text-muted" />
-      <p className="mt-3 font-mono text-2xl font-bold text-white">—</p>
+      <p className="mt-3 font-mono text-2xl font-bold text-ink">—</p>
       <p className="mt-1 font-mono text-xs uppercase tracking-wide text-muted">{label}</p>
     </div>
   );

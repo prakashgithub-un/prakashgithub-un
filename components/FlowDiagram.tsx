@@ -45,7 +45,7 @@ function FlowNode({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay }}
-      className="rounded-lg border border-base-600 bg-base-800/70 px-4 py-2 text-center font-mono text-xs text-white transition-colors hover:border-accent-cyan/60 hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.5)]"
+      className="rounded-lg border border-base-600 bg-base-800/70 px-4 py-2 text-center font-mono text-xs text-ink transition-colors hover:border-accent-cyan/60 hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.5)]"
     >
       <div>{label}</div>
       {sublabel && <div className="mt-0.5 text-[10px] text-muted">{sublabel}</div>}

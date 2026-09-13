@@ -52,7 +52,7 @@ export function Experience() {
                       <div className="flex flex-wrap items-center justify-between gap-3">
                         <div>
                           <div className="flex flex-wrap items-baseline gap-x-3">
-                            <h3 className="font-mono text-sm font-semibold uppercase tracking-wide text-white">
+                            <h3 className="font-mono text-sm font-semibold uppercase tracking-wide text-ink">
                               {entry.company}
                             </h3>
                             {i === 0 && (

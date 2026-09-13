@@ -71,7 +71,7 @@ export function Security() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={started ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="rounded-md border border-white/20 bg-base-800/80 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-white"
+              className="rounded-md border border-ink/15 bg-base-800/80 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-ink"
             >
               Application
             </motion.div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { smoothPath } from "@/lib/smoothPath";
 
 interface NetNode {
   id: string;
@@ -91,14 +92,13 @@ export function InfrastructureNetwork() {
         const isActive = hovered && connected.has(a) && connected.has(b);
         const isDimmed = hovered !== null && !isActive;
         return (
-          <motion.line
+          <motion.path
             key={i}
-            x1={from.x}
-            y1={from.y}
-            x2={to.x}
-            y2={to.y}
-            stroke={isActive ? "#22d3ee" : "rgba(148,163,184,0.35)"}
+            d={smoothPath(from.x, from.y, to.x, to.y)}
+            fill="none"
+            stroke={isActive ? "#0891b2" : "rgba(100,116,139,0.45)"}
             strokeWidth={isActive ? 0.35 : 0.22}
+            strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: isDimmed ? 0.3 : 1 }}
             transition={{
@@ -114,12 +114,12 @@ export function InfrastructureNetwork() {
         const from = nodeMap.get(a)!;
         const to = nodeMap.get(b)!;
         return (
-          <circle key={i} r={0.5} fill="#22d3ee" opacity={0.8}>
+          <circle key={i} r={0.5} fill="#0891b2" opacity={0.8}>
             <animateMotion
               dur={`${4 + i}s`}
               begin={`${i * 1.1}s`}
               repeatCount="indefinite"
-              path={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
+              path={smoothPath(from.x, from.y, to.x, to.y)}
             />
           </circle>
         );
@@ -131,7 +131,7 @@ export function InfrastructureNetwork() {
           cx={node.x}
           cy={node.y}
           r={0.55}
-          fill="rgba(148,163,184,0.35)"
+          fill="rgba(100,116,139,0.45)"
           className="drift-node"
           style={
             {
@@ -159,7 +159,7 @@ export function InfrastructureNetwork() {
                 animationDelay: `${i * 0.6}s`,
                 animationDuration: `${9 + i}s`,
                 transformOrigin: `${node.x}px ${node.y}px`,
-                filter: isHovered ? "drop-shadow(0 0 3px #22d3ee)" : "none",
+                filter: isHovered ? "drop-shadow(0 0 3px #0891b2)" : "none",
                 opacity: isDimmed ? 0.4 : 1,
                 transition: "opacity 0.3s",
               } as React.CSSProperties
@@ -178,7 +178,7 @@ export function InfrastructureNetwork() {
               cx={node.x}
               cy={node.y}
               r={isHovered ? 1.3 : 0.9}
-              fill={isHovered ? "#22d3ee" : "#3b82f6"}
+              fill={isHovered ? "#0891b2" : "#2563eb"}
               style={{ transition: "r 0.3s" }}
             />
             <text
@@ -187,7 +187,7 @@ export function InfrastructureNetwork() {
               textAnchor="middle"
               fontSize={2.6}
               className="font-mono"
-              fill="white"
+              fill="#12141a"
               opacity={isHovered ? 1 : 0}
               style={{ transition: "opacity 0.3s", pointerEvents: "none" }}
             >

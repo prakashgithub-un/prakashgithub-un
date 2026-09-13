@@ -59,7 +59,7 @@ export function CodeDrawer({
               <button
                 onClick={onClose}
                 aria-label="Close"
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-base-border text-muted transition-colors hover:text-white"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-base-border text-muted transition-colors hover:text-ink"
               >
                 <X size={16} />
               </button>

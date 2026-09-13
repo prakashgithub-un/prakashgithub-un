@@ -24,7 +24,7 @@ export function KubernetesLab() {
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
             04 · Kubernetes
           </span>
-          <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-semibold uppercase leading-snug tracking-tight text-white sm:text-3xl md:text-4xl">
+          <h2 className="mx-auto mt-4 max-w-2xl text-2xl font-semibold uppercase leading-snug tracking-tight text-ink sm:text-3xl md:text-4xl">
             Containers are easy.
             <br />
             <span className="text-muted">Operating them is the engineering.</span>
@@ -98,7 +98,7 @@ export function KubernetesLab() {
         </motion.div>
 
         <div className="mt-16 rounded-2xl border border-base-border bg-base-900/40 p-8">
-          <div className="text-center font-mono text-sm font-semibold uppercase tracking-wide text-white">
+          <div className="text-center font-mono text-sm font-semibold uppercase tracking-wide text-ink">
             KUBERNETES
           </div>
           <div className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-2.5 sm:grid-cols-3">
@@ -121,7 +121,7 @@ export function KubernetesLab() {
                 {kubernetesExperience.production.map((item) => (
                   <span
                     key={item}
-                    className="rounded-md border border-base-border bg-base-800/60 px-2.5 py-1 font-mono text-xs text-white"
+                    className="rounded-md border border-base-border bg-base-800/60 px-2.5 py-1 font-mono text-xs text-ink"
                   >
                     {item}
                   </span>
@@ -173,7 +173,7 @@ function ClusterPill({
       } ${
         muted
           ? "border-base-border bg-base-800/40 text-muted"
-          : "border-accent-cyan/30 bg-accent-cyan/[0.06] text-white"
+          : "border-accent-cyan/30 bg-accent-cyan/[0.06] text-ink"
       }`}
     >
       {label}

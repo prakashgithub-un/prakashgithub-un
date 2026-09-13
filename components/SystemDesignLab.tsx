@@ -29,7 +29,7 @@ export function SystemDesignLab() {
                 className={`rounded-md border px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors ${
                   activeId === s.id
                     ? "border-accent bg-accent/10 text-accent"
-                    : "border-base-border text-muted hover:text-white"
+                    : "border-base-border text-muted hover:text-ink"
                 }`}
               >
                 {s.label}
@@ -84,7 +84,7 @@ export function SystemDesignLab() {
 function DetailRow({ label, text }: { label: string; text: string }) {
   return (
     <div>
-      <p className="font-mono text-[11px] uppercase tracking-wide text-white">{label}</p>
+      <p className="font-mono text-[11px] uppercase tracking-wide text-ink">{label}</p>
       <p className="mt-1 text-sm leading-relaxed text-muted">{text}</p>
     </div>
   );

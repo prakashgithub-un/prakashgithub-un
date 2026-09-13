@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { DiagramEdge, DiagramNode } from "@/data/projects";
+import { smoothPath } from "@/lib/smoothPath";
 
 interface ArchitectureDiagramProps {
   nodes: DiagramNode[];
@@ -47,7 +48,12 @@ export function ArchitectureDiagram({
 
   return (
     <div className="relative w-full min-w-[420px] overflow-visible" style={{ height }}>
-      <svg className="absolute inset-0 h-full w-full" aria-hidden>
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        className="absolute inset-0 h-full w-full"
+        aria-hidden
+      >
         {edges.map((edge, i) => {
           const from = nodeMap.get(edge.from);
           const to = nodeMap.get(edge.to);
@@ -57,31 +63,27 @@ export function ArchitectureDiagram({
           const brokenLink = (inactive.has(edge.from) || inactive.has(edge.to)) && !rerouted;
           const hoverActive = !scenarioMode && active && connected.has(edge.from) && connected.has(edge.to);
           const isHighlighted = rerouted || hoverActive;
+          const path = smoothPath(from.x, from.y, to.x, to.y);
 
           return (
             <g key={i}>
-              <line
-                x1={`${from.x}%`}
-                y1={`${from.y}%`}
-                x2={`${to.x}%`}
-                y2={`${to.y}%`}
+              <path
+                d={path}
+                fill="none"
                 stroke={
                   isHighlighted
-                    ? "#22d3ee"
+                    ? "#0891b2"
                     : brokenLink
-                      ? "rgba(248,113,113,0.35)"
-                      : "rgba(255,255,255,0.28)"
+                      ? "rgba(220,38,38,0.4)"
+                      : "rgba(15,23,42,0.25)"
                 }
-                strokeWidth={isHighlighted ? 2.5 : 1.5}
-                strokeDasharray={brokenLink ? "3 4" : undefined}
+                strokeWidth={isHighlighted ? 0.5 : 0.3}
+                strokeLinecap="round"
+                strokeDasharray={brokenLink ? "1.5 2" : undefined}
               />
               {isHighlighted && (
-                <circle r={3} fill="#22d3ee">
-                  <animateMotion
-                    dur="1.4s"
-                    repeatCount="indefinite"
-                    path={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
-                  />
+                <circle r={0.7} fill="#0891b2">
+                  <animateMotion dur="1.4s" repeatCount="indefinite" path={path} />
                 </circle>
               )}
             </g>
@@ -116,31 +118,31 @@ export function ArchitectureDiagram({
               left: `${node.x}%`,
               top: `${node.y}%`,
               borderColor: isInactive
-                ? "rgba(248,113,113,0.4)"
+                ? "rgba(220,38,38,0.4)"
                 : isPulsing
-                  ? "rgba(52,211,153,0.5)"
+                  ? "rgba(5,150,105,0.5)"
                   : isHoverActive
-                    ? "#22d3ee"
-                    : "rgba(255,255,255,0.12)",
+                    ? "#0891b2"
+                    : "rgba(15,23,42,0.16)",
               backgroundColor: isInactive
-                ? "rgba(248,113,113,0.08)"
+                ? "rgba(220,38,38,0.06)"
                 : isPulsing
-                  ? "rgba(52,211,153,0.08)"
+                  ? "rgba(5,150,105,0.08)"
                   : isHoverActive
-                    ? "rgba(34,211,238,0.12)"
-                    : "rgba(21,23,29,0.9)",
+                    ? "rgba(8,145,178,0.1)"
+                    : "rgba(255,255,255,0.9)",
               color: isInactive
-                ? "rgba(248,113,113,0.7)"
+                ? "rgba(185,28,28,0.8)"
                 : isHoverActive
-                  ? "#fff"
+                  ? "#12141a"
                   : isDimmed
-                    ? "rgba(139,143,154,0.5)"
-                    : "#e5e7eb",
+                    ? "rgba(91,100,114,0.55)"
+                    : "#12141a",
               textDecoration: isInactive ? "line-through" : "none",
               boxShadow: isHoverActive
-                ? "0 0 30px -8px #22d3ee"
+                ? "0 0 30px -8px #0891b2"
                 : isPulsing
-                  ? "0 0 24px -8px rgba(52,211,153,0.6)"
+                  ? "0 0 24px -8px rgba(5,150,105,0.5)"
                   : "none",
             }}
           >

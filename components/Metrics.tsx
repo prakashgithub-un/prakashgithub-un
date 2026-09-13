@@ -29,7 +29,7 @@ function Counter({ value }: { value: string }) {
   }, [inView, isNumeric, numeric]);
 
   return (
-    <span ref={ref} className="font-mono text-4xl font-bold text-white sm:text-5xl">
+    <span ref={ref} className="font-mono text-4xl font-bold text-ink sm:text-5xl">
       {isNumeric ? display : value}
       {isNumeric ? suffix : ""}
     </span>

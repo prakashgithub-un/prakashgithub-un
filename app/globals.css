@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply bg-base-950 text-white antialiased;
+    @apply bg-base-950 text-ink antialiased;
   }
 
   ::selection {
@@ -27,20 +27,20 @@
 
 @layer utilities {
   .bg-grid {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(15, 23, 42, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.055) 1px, transparent 1px);
     background-size: 44px 44px;
   }
 
   .text-gradient {
-    background: linear-gradient(120deg, #ffffff 20%, #8b93a3 80%);
+    background: linear-gradient(120deg, #12141a 20%, #5b6472 80%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .glass {
-    background: rgba(14, 16, 22, 0.55);
+    background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
   }

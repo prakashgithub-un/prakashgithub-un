@@ -13,6 +13,7 @@ import {
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { usePrefersReducedMotion } from "@/lib/motion";
+import { smoothPath } from "@/lib/smoothPath";
 
 const CLIENT = { x: 50, y: 6 };
 const APIM = { x: 50, y: 32 };
@@ -54,41 +55,38 @@ export function HybridApiGateway() {
               aria-hidden
             >
               {backendPositions.map((b, i) => (
-                <motion.line
+                <motion.path
                   key={`direct-${i}`}
-                  x1={CLIENT.x}
-                  y1={CLIENT.y}
-                  x2={b.x}
-                  y2={b.y}
-                  stroke="rgba(248,113,113,0.35)"
+                  d={smoothPath(CLIENT.x, CLIENT.y, b.x, b.y)}
+                  fill="none"
+                  stroke="rgba(220,38,38,0.4)"
                   strokeWidth={0.5}
-                  strokeDasharray="2.5 3"
+                  strokeLinecap="round"
+                  strokeDasharray="1.5 2"
                   initial={{ opacity: 1 }}
                   animate={started ? { opacity: 0 } : { opacity: 1 }}
                   transition={{ duration: 0.6, delay: TRANSITION_DELAY }}
                 />
               ))}
 
-              <motion.line
-                x1={CLIENT.x}
-                y1={CLIENT.y}
-                x2={APIM.x}
-                y2={APIM.y}
-                stroke="rgba(34,211,238,0.55)"
+              <motion.path
+                d={smoothPath(CLIENT.x, CLIENT.y, APIM.x, APIM.y)}
+                fill="none"
+                stroke="rgba(8,145,178,0.55)"
                 strokeWidth={0.55}
+                strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.5, delay: APIM_DELAY }}
               />
               {backendPositions.map((b, i) => (
-                <motion.line
+                <motion.path
                   key={`secure-${i}`}
-                  x1={APIM.x}
-                  y1={APIM.y + 9}
-                  x2={b.x}
-                  y2={b.y}
-                  stroke="rgba(34,211,238,0.55)"
+                  d={smoothPath(APIM.x, APIM.y + 9, b.x, b.y)}
+                  fill="none"
+                  stroke="rgba(8,145,178,0.55)"
                   strokeWidth={0.55}
+                  strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.5, delay: APIM_DELAY + 0.2 + i * 0.1 }}
@@ -97,14 +95,14 @@ export function HybridApiGateway() {
 
               {started && !reducedMotion && (
                 <>
-                  <FlowParticle from={CLIENT} to={APIM} delay={APIM_DELAY + 0.6} color="#22d3ee" />
+                  <FlowParticle from={CLIENT} to={APIM} delay={APIM_DELAY + 0.6} color="#0891b2" />
                   {backendPositions.map((b, i) => (
                     <FlowParticle
                       key={`p-${i}`}
                       from={{ x: APIM.x, y: APIM.y + 9 }}
                       to={b}
                       delay={APIM_DELAY + 1 + i * 0.2}
-                      color="#22d3ee"
+                      color="#0891b2"
                     />
                   ))}
                 </>
@@ -115,7 +113,7 @@ export function HybridApiGateway() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-lg border border-base-border bg-base-800/70 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-white"
+              className="absolute -translate-x-1/2 -translate-y-1/2 rounded-lg border border-base-border bg-base-800/70 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-ink"
               style={{ left: `${CLIENT.x}%`, top: `${CLIENT.y}%` }}
             >
               Client
@@ -132,7 +130,7 @@ export function HybridApiGateway() {
             >
               <div className="flex items-center gap-2">
                 <ShieldCheck size={15} className="text-accent-cyan" />
-                <span className="font-mono text-xs font-bold uppercase tracking-wide text-white">
+                <span className="font-mono text-xs font-bold uppercase tracking-wide text-ink">
                   Azure APIM
                 </span>
               </div>
@@ -176,7 +174,7 @@ export function HybridApiGateway() {
                     </p>
                     <div className="grid grid-cols-1 gap-1.5">
                       {apimCapabilitiesFull.map((cap) => (
-                        <div key={cap} className="flex items-center gap-1.5 font-mono text-[11px] text-white">
+                        <div key={cap} className="flex items-center gap-1.5 font-mono text-[11px] text-ink">
                           <Check size={11} className="shrink-0 text-accent-cyan" />
                           {cap}
                         </div>
@@ -204,7 +202,7 @@ export function HybridApiGateway() {
                     transition: `border-color 0.6s ease ${BACKEND_STATE_DELAY}s, background-color 0.6s ease ${BACKEND_STATE_DELAY}s`,
                   }}
                 >
-                  <p className="font-mono text-xs font-semibold uppercase tracking-wide text-white">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wide text-ink">
                     {backend.system}
                   </p>
                   <p className="mt-0.5 font-mono text-[10px] text-muted">{backend.hosting}</p>
@@ -213,7 +211,7 @@ export function HybridApiGateway() {
                     initial={{ opacity: 1 }}
                     animate={started ? { opacity: 0 } : { opacity: 1 }}
                     transition={{ duration: 0.4, delay: BACKEND_STATE_DELAY }}
-                    className="absolute inset-0 flex items-center justify-center gap-1 rounded-lg bg-base-950/70 font-mono text-[10px] uppercase tracking-wide text-red-300/80"
+                    className="absolute inset-0 flex items-center justify-center gap-1 rounded-lg bg-red-50/90 font-mono text-[10px] uppercase tracking-wide text-red-700"
                   >
                     <ShieldAlert size={12} />
                     Exposed
@@ -240,7 +238,7 @@ export function HybridApiGateway() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="font-mono text-[11px] uppercase tracking-wide text-red-300/70"
+                  className="font-mono text-[11px] uppercase tracking-wide text-red-600"
                 >
                   Client → Legacy Application
                 </motion.p>
@@ -310,7 +308,7 @@ function FlowParticle({
         dur="1.6s"
         begin={`${delay}s`}
         repeatCount="indefinite"
-        path={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
+        path={smoothPath(from.x, from.y, to.x, to.y)}
       />
     </circle>
   );

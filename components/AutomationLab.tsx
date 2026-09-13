@@ -8,6 +8,7 @@ import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { CodeDrawer } from "./CodeDrawer";
 import { usePrefersReducedMotion } from "@/lib/motion";
+import { smoothPath } from "@/lib/smoothPath";
 
 const ENGINE = { x: 50, y: 5 };
 const JUNCTION = { x: 50, y: 20 };
@@ -43,27 +44,25 @@ export function AutomationLab() {
             style={{ height: 560 }}
           >
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden>
-              <motion.line
-                x1={ENGINE.x}
-                y1={ENGINE.y}
-                x2={JUNCTION.x}
-                y2={JUNCTION.y}
-                stroke="rgba(148,163,184,0.5)"
+              <motion.path
+                d={smoothPath(ENGINE.x, ENGINE.y, JUNCTION.x, JUNCTION.y)}
+                fill="none"
+                stroke="rgba(71,85,105,0.55)"
                 strokeWidth={0.55}
+                strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
               />
 
               {systemPositions.map((sys, i) => (
-                <motion.line
+                <motion.path
                   key={`junction-${i}`}
-                  x1={JUNCTION.x}
-                  y1={JUNCTION.y}
-                  x2={sys.x}
-                  y2={sys.y}
-                  stroke="rgba(148,163,184,0.5)"
+                  d={smoothPath(JUNCTION.x, JUNCTION.y, sys.x, sys.y)}
+                  fill="none"
+                  stroke="rgba(71,85,105,0.55)"
                   strokeWidth={0.55}
+                  strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
@@ -71,14 +70,13 @@ export function AutomationLab() {
               ))}
 
               {systemPositions.map((sys, i) => (
-                <motion.line
+                <motion.path
                   key={`step-${i}`}
-                  x1={sys.x}
-                  y1={sys.y}
-                  x2={stepPositions[i].x}
-                  y2={stepPositions[i].y}
+                  d={smoothPath(sys.x, sys.y, stepPositions[i].x, stepPositions[i].y)}
+                  fill="none"
                   stroke="rgba(34,211,238,0.55)"
                   strokeWidth={0.55}
+                  strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.4, delay: 1.0 + i * 0.12 }}
@@ -86,27 +84,25 @@ export function AutomationLab() {
               ))}
 
               {stepPositions.map((step, i) => (
-                <motion.line
+                <motion.path
                   key={`converge-${i}`}
-                  x1={step.x}
-                  y1={step.y}
-                  x2={CONVERGE.x}
-                  y2={CONVERGE.y}
-                  stroke="rgba(148,163,184,0.5)"
+                  d={smoothPath(step.x, step.y, CONVERGE.x, CONVERGE.y)}
+                  fill="none"
+                  stroke="rgba(71,85,105,0.55)"
                   strokeWidth={0.55}
+                  strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
                   transition={{ duration: 0.4, delay: 1.7 + i * 0.08 }}
                 />
               ))}
 
-              <motion.line
-                x1={CONVERGE.x}
-                y1={CONVERGE.y}
-                x2={WORKFLOW.x}
-                y2={WORKFLOW.y}
+              <motion.path
+                d={smoothPath(CONVERGE.x, CONVERGE.y, WORKFLOW.x, WORKFLOW.y)}
+                fill="none"
                 stroke="rgba(52,211,153,0.6)"
                 strokeWidth={0.6}
+                strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.4, delay: 2.1 }}
@@ -228,7 +224,7 @@ function FlowParticle({
         dur="1.6s"
         begin={`${delay}s`}
         repeatCount="indefinite"
-        path={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
+        path={smoothPath(from.x, from.y, to.x, to.y)}
       />
     </circle>
   );
@@ -269,7 +265,7 @@ function EngineNode({
       : cyan
         ? "bg-accent-cyan/[0.06]"
         : "bg-base-800/70";
-  const textColor = accent || green || cyan ? "text-white" : "text-muted";
+  const textColor = accent || green || cyan ? "text-ink" : "text-muted";
 
   return (
     <motion.div

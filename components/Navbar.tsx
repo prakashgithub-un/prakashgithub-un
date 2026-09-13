@@ -38,7 +38,7 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <a
           href="#top"
-          className="flex h-9 items-center rounded-md border border-base-border bg-base-800 px-3 font-mono text-sm font-bold text-white"
+          className="flex h-9 items-center rounded-md border border-base-border bg-base-800 px-3 font-mono text-sm font-bold text-ink"
         >
           {profile.name}
         </a>
@@ -51,7 +51,7 @@ export function Navbar() {
                 <a
                   href={link.href}
                   className={`text-sm transition-colors ${
-                    isActive ? "text-white" : "text-muted hover:text-white"
+                    isActive ? "text-ink" : "text-muted hover:text-ink"
                   }`}
                 >
                   {link.label}
@@ -73,7 +73,7 @@ export function Navbar() {
 
         <button
           aria-label="Toggle menu"
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-base-border text-white md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-md border border-base-border text-ink md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={18} /> : <Menu size={18} />}
@@ -95,7 +95,7 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-base-800 hover:text-white"
+                    className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-base-800 hover:text-ink"
                   >
                     {link.label}
                   </a>

@@ -60,7 +60,7 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="text-[13vw] font-bold uppercase leading-[0.98] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h1 className="text-[13vw] font-bold uppercase leading-[0.98] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem]">
             {profile.headline.map((line, i) => (
               <motion.span
                 key={line}
@@ -111,7 +111,7 @@ export function Hero() {
               href={profile.github || "#"}
               target={profile.github ? "_blank" : undefined}
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-base-border bg-base-900/60 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-base-800"
+              className="inline-flex items-center gap-2 rounded-md border border-base-border bg-base-900/60 px-5 py-3 text-sm font-medium text-ink transition-colors hover:bg-base-800"
             >
               <Github size={16} />
               GitHub
@@ -120,7 +120,7 @@ export function Hero() {
               href={profile.resume || "#"}
               target={profile.resume ? "_blank" : undefined}
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-medium text-muted transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-medium text-muted transition-colors hover:text-ink"
             >
               <FileDown size={16} />
               Download Resume

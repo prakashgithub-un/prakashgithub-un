@@ -33,7 +33,7 @@ export function Projects() {
                 )}
               </div>
 
-              <h3 className="mt-5 text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
+              <h3 className="mt-5 text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl md:text-5xl">
                 {project.name}
               </h3>
               <p className="mt-2 font-mono text-sm text-muted">{project.title}</p>

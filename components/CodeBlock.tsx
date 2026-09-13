@@ -28,7 +28,7 @@ function tokenize(line: string) {
     else if (word) {
       tokens.push({
         text: word,
-        className: KEYWORDS.has(word) ? "text-accent-violet" : "text-white",
+        className: KEYWORDS.has(word) ? "text-accent-violet" : "text-ink",
       });
     } else if (space) tokens.push({ text: space, className: "" });
     else if (symbol) tokens.push({ text: symbol, className: "text-accent-cyan" });

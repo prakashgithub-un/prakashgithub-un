@@ -32,7 +32,7 @@ export function Observability() {
             {observabilityTech.map((t) => (
               <span
                 key={t}
-                className="rounded-md border border-base-border bg-base-800/60 px-2.5 py-1 font-mono text-xs text-white"
+                className="rounded-md border border-base-border bg-base-800/60 px-2.5 py-1 font-mono text-xs text-ink"
               >
                 {t}
               </span>

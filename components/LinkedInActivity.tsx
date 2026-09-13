@@ -35,7 +35,7 @@ export function LinkedInActivity() {
               href={POST_URL}
               target="_blank"
               rel="noreferrer"
-              className="font-mono text-xs text-accent-cyan transition-colors hover:text-white"
+              className="font-mono text-xs text-accent-cyan transition-colors hover:text-ink"
             >
               View on LinkedIn →
             </a>

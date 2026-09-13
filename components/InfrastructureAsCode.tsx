@@ -77,7 +77,7 @@ export function InfrastructureAsCode() {
                     initial={{ opacity: 0, scale: 0.85, y: 6 }}
                     animate={started ? { opacity: 1, scale: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: RESOURCE_START + i * RESOURCE_STEP }}
-                    className="rounded-lg border border-accent-green/30 bg-accent-green/[0.06] px-5 py-2 font-mono text-xs text-white shadow-[0_0_20px_-8px_rgba(52,211,153,0.5)]"
+                    className="rounded-lg border border-accent-green/30 bg-accent-green/[0.06] px-5 py-2 font-mono text-xs text-ink shadow-[0_0_20px_-8px_rgba(52,211,153,0.5)]"
                   >
                     {r.label}
                   </motion.div>

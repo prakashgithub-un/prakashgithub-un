@@ -30,7 +30,7 @@ export function SkillMatrix() {
             <Reveal key={group.platform} delay={i * 0.08}>
               <div className="h-full rounded-2xl border border-base-border bg-base-900/40 p-6 transition-colors hover:border-accent-cyan/30">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-mono text-lg font-semibold uppercase tracking-wide text-white">
+                  <h3 className="font-mono text-lg font-semibold uppercase tracking-wide text-ink">
                     {group.platform}
                   </h3>
                   <SkillLevelTag level={group.level} />

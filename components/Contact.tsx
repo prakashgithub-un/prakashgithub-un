@@ -12,7 +12,7 @@ export function Contact() {
       />
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <Reveal>
-          <h2 className="text-3xl font-bold uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl md:text-5xl">
             Let&apos;s Build Something Reliable.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted">
@@ -66,7 +66,7 @@ function ContactLink({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-2 rounded-md border border-base-border bg-base-900/60 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-base-800"
+      className="inline-flex items-center gap-2 rounded-md border border-base-border bg-base-900/60 px-5 py-3 text-sm font-medium text-ink transition-colors hover:bg-base-800"
     >
       <Icon size={16} />
       {label}
