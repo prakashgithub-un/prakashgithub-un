@@ -25,7 +25,7 @@ export function AmbientBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 90% 60% at 50% 40%, transparent 40%, rgba(8,9,11,0.6) 100%)",
+            "radial-gradient(ellipse 90% 60% at 50% 40%, transparent 40%, rgba(10,11,16,0.6) 100%)",
         }}
       />
 

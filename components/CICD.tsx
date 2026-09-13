@@ -48,7 +48,7 @@ export function CICD() {
                       className="h-3 w-3 rounded-full border-2 border-base-600 bg-base-900"
                       animate={
                         started && !reducedMotion
-                          ? { borderColor: ["#282c35", "#22d3ee", "#282c35"] }
+                          ? { borderColor: ["#2c313d", "#22d3ee", "#2c313d"] }
                           : {}
                       }
                       transition={{
