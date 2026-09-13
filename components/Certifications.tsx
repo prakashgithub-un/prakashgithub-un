@@ -53,7 +53,7 @@ export function Certifications() {
                   </div>
                 </div>
 
-                {cert.credentialUrl ? (
+                {cert.credentialUrl && (
                   <a
                     href={cert.credentialUrl}
                     target="_blank"
@@ -63,10 +63,6 @@ export function Certifications() {
                     Verify Credential
                     <ExternalLink size={12} />
                   </a>
-                ) : (
-                  <span className="inline-flex shrink-0 items-center self-start rounded-md border border-base-border px-4 py-2 font-mono text-[11px] uppercase tracking-wide text-muted/60 sm:self-center">
-                    Verification Pending
-                  </span>
                 )}
               </div>
             </Reveal>
