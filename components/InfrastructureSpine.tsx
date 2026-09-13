@@ -9,7 +9,7 @@ const nodes = [
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "architecture", label: "Architecture" },
-  { id: "engineering-lab", label: "Engineering Lab" },
+  { id: "posts", label: "Posts" },
   { id: "github", label: "GitHub" },
   { id: "contact", label: "Contact" },
 ];

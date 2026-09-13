@@ -17,8 +17,9 @@ import { HybridApiGateway } from "@/components/HybridApiGateway";
 import { Projects } from "@/components/Projects";
 import { Metrics } from "@/components/Metrics";
 import { Roadmap } from "@/components/Roadmap";
+import { Certifications } from "@/components/Certifications";
+import { Posts } from "@/components/Posts";
 import { GithubActivity } from "@/components/GithubActivity";
-import { LinkedInActivity } from "@/components/LinkedInActivity";
 import { CurrentlyDeveloping } from "@/components/CurrentlyDeveloping";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -46,8 +47,9 @@ export default function Home() {
         <Projects />
         <Metrics />
         <Roadmap />
+        <Certifications />
+        <Posts />
         <GithubActivity />
-        <LinkedInActivity />
         <CurrentlyDeveloping />
         <Contact />
       </main>
