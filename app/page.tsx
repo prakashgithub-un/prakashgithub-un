@@ -18,6 +18,7 @@ import { Projects } from "@/components/Projects";
 import { Metrics } from "@/components/Metrics";
 import { Roadmap } from "@/components/Roadmap";
 import { GithubActivity } from "@/components/GithubActivity";
+import { LinkedInActivity } from "@/components/LinkedInActivity";
 import { CurrentlyDeveloping } from "@/components/CurrentlyDeveloping";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -46,6 +47,7 @@ export default function Home() {
         <Metrics />
         <Roadmap />
         <GithubActivity />
+        <LinkedInActivity />
         <CurrentlyDeveloping />
         <Contact />
       </main>

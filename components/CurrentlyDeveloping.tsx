@@ -7,7 +7,7 @@ export function CurrentlyDeveloping() {
     <section className="relative py-24">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="19 · Currently Developing"
+          eyebrow="20 · Currently Developing"
           title="Currently Developing"
           description="The areas I'm deliberately building depth in right now, edited here as they progress."
           align="center"
