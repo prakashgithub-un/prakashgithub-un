@@ -58,18 +58,3 @@ export const metrics = [
   { value: "Multiple", label: "Production Environments" },
   { value: "Terraform", label: "Infrastructure as Code" },
 ] as const;
-
-export const education = [
-  {
-    degree: "Bachelor of Engineering",
-    field: "Civil Engineering",
-    school: "Kongu Engineering College",
-    period: "2016 – 2019",
-  },
-  {
-    degree: "MBA",
-    field: "Logistics & Supply Chain Management",
-    school: "University of Madras",
-    period: "2022 – 2024",
-  },
-] as const;
