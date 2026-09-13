@@ -138,16 +138,21 @@ export const platformEngineeringFocus = [
   "Observability",
 ];
 
-export interface AutomationExample {
-  title: string;
+export interface AutomationNode {
+  id: string;
+  system: string;
+  step: string;
   description: string;
   code: string;
 }
 
-export const automationExamples: AutomationExample[] = [
+// Feeds the Automation Engine visualization — one node per system.
+export const automationNodes: AutomationNode[] = [
   {
-    title: "AWS Health Check",
-    description: "Sweep EC2/ALB target health across a region and flag anything unhealthy.",
+    id: "aws",
+    system: "AWS",
+    step: "Health Check",
+    description: "Sweeps EC2/ALB target health across a region and flags anything unhealthy.",
     code: `import boto3
 
 def unhealthy_targets(region: str):
@@ -163,8 +168,10 @@ def unhealthy_targets(region: str):
                 yield group["TargetGroupName"], t`,
   },
   {
-    title: "Kubernetes Automation",
-    description: "List pods stuck outside Running state across all namespaces.",
+    id: "kubernetes",
+    system: "Kubernetes",
+    step: "Workload Analysis",
+    description: "Scans workloads across every namespace and flags anything stuck outside a healthy state.",
     code: `from kubernetes import client, config
 
 config.load_kube_config()
@@ -180,8 +187,10 @@ for p in stuck:
     print(f"{p.metadata.namespace}/{p.metadata.name}: {p.status.phase}")`,
   },
   {
-    title: "FinOps Automation",
-    description: "Pull daily cost-by-service from AWS Cost Explorer for trend tracking.",
+    id: "finops",
+    system: "FinOps",
+    step: "Cost Analysis",
+    description: "Pulls daily cost-by-service from AWS Cost Explorer for trend tracking.",
     code: `import boto3
 from datetime import date, timedelta
 

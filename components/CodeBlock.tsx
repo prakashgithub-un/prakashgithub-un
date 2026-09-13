@@ -39,10 +39,10 @@ function tokenize(line: string) {
 export function CodeBlock({ code }: { code: string }) {
   const lines = code.split("\n");
   return (
-    <pre className="overflow-x-auto rounded-lg border border-base-border bg-base-950/80 p-4 font-mono text-[11.5px] leading-relaxed scrollbar-none">
+    <pre className="scrollbar-thin overflow-x-auto rounded-lg border border-base-border bg-base-950/80 p-4 font-mono text-[12px] leading-relaxed">
       <code>
         {lines.map((line, i) => (
-          <div key={i}>
+          <div key={i} className="whitespace-pre">
             {tokenize(line).map((token, ti) => (
               <span key={ti} className={token.className}>
                 {token.text}
