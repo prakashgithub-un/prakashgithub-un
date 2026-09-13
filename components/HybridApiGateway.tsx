@@ -60,7 +60,7 @@ export function HybridApiGateway() {
                   d={smoothPath(CLIENT.x, CLIENT.y, b.x, b.y)}
                   fill="none"
                   stroke="rgba(220,38,38,0.4)"
-                  strokeWidth={0.3}
+                  strokeWidth={0.18}
                   strokeLinecap="round"
                   strokeDasharray="1.5 2"
                   initial={{ opacity: 1 }}
@@ -73,7 +73,7 @@ export function HybridApiGateway() {
                 d={smoothPath(CLIENT.x, CLIENT.y, APIM.x, APIM.y)}
                 fill="none"
                 stroke="rgba(8,145,178,0.55)"
-                strokeWidth={0.32}
+                strokeWidth={0.2}
                 strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
@@ -85,7 +85,7 @@ export function HybridApiGateway() {
                   d={smoothPath(APIM.x, APIM.y + 9, b.x, b.y)}
                   fill="none"
                   stroke="rgba(8,145,178,0.55)"
-                  strokeWidth={0.32}
+                  strokeWidth={0.2}
                   strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}

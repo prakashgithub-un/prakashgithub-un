@@ -48,7 +48,7 @@ export function AutomationLab() {
                 d={smoothPath(ENGINE.x, ENGINE.y, JUNCTION.x, JUNCTION.y)}
                 fill="none"
                 stroke="rgba(71,85,105,0.55)"
-                strokeWidth={0.32}
+                strokeWidth={0.2}
                 strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}
@@ -61,7 +61,7 @@ export function AutomationLab() {
                   d={smoothPath(JUNCTION.x, JUNCTION.y, sys.x, sys.y)}
                   fill="none"
                   stroke="rgba(71,85,105,0.55)"
-                  strokeWidth={0.32}
+                  strokeWidth={0.2}
                   strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
@@ -75,7 +75,7 @@ export function AutomationLab() {
                   d={smoothPath(sys.x, sys.y, stepPositions[i].x, stepPositions[i].y)}
                   fill="none"
                   stroke="rgba(34,211,238,0.55)"
-                  strokeWidth={0.32}
+                  strokeWidth={0.2}
                   strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
@@ -89,7 +89,7 @@ export function AutomationLab() {
                   d={smoothPath(step.x, step.y, CONVERGE.x, CONVERGE.y)}
                   fill="none"
                   stroke="rgba(71,85,105,0.55)"
-                  strokeWidth={0.32}
+                  strokeWidth={0.2}
                   strokeLinecap="round"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={started ? { pathLength: 1, opacity: 1 } : {}}
@@ -101,7 +101,7 @@ export function AutomationLab() {
                 d={smoothPath(CONVERGE.x, CONVERGE.y, WORKFLOW.x, WORKFLOW.y)}
                 fill="none"
                 stroke="rgba(52,211,153,0.6)"
-                strokeWidth={0.36}
+                strokeWidth={0.22}
                 strokeLinecap="round"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={started ? { pathLength: 1, opacity: 1 } : {}}

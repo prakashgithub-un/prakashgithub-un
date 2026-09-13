@@ -77,7 +77,7 @@ export function ArchitectureDiagram({
                       ? "rgba(220,38,38,0.4)"
                       : "rgba(15,23,42,0.25)"
                 }
-                strokeWidth={isHighlighted ? 0.32 : 0.18}
+                strokeWidth={isHighlighted ? 0.22 : 0.1}
                 strokeLinecap="round"
                 strokeDasharray={brokenLink ? "1.5 2" : undefined}
               />

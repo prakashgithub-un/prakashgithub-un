@@ -97,7 +97,7 @@ export function InfrastructureNetwork() {
             d={smoothPath(from.x, from.y, to.x, to.y)}
             fill="none"
             stroke={isActive ? "#0891b2" : "rgba(100,116,139,0.45)"}
-            strokeWidth={isActive ? 0.22 : 0.13}
+            strokeWidth={isActive ? 0.14 : 0.08}
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: isDimmed ? 0.3 : 1 }}
