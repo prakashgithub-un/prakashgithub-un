@@ -71,6 +71,13 @@ export const iacConcepts = [
   "Governance",
 ];
 
+export const iacStrengths = [
+  "Reusable, versioned modules shared across projects — no copy-pasted resource blocks per environment.",
+  "Clean separation between staging and production, each with its own state and variables.",
+  "Remote state management so infrastructure changes stay safe under concurrent, collaborative work.",
+  "Validation and plan review built into the deployment pipeline, not run ad hoc from a laptop.",
+];
+
 export const cicdExperience = {
   production: ["GitHub Actions", "Jenkins", "Docker", "ACR", "ECR", "Kubernetes"],
   advanced: [

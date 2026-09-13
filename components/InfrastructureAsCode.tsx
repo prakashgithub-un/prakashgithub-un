@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { iacConcepts } from "@/data/skills";
+import { iacConcepts, iacStrengths } from "@/data/skills";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { SkillLevelTag } from "./SkillLevelTag";
@@ -105,6 +105,15 @@ export function InfrastructureAsCode() {
               </motion.div>
             </div>
           </motion.div>
+
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2">
+            {iacStrengths.map((point) => (
+              <div key={point} className="flex items-start gap-2.5 rounded-lg border border-base-border bg-base-900/40 p-4">
+                <Check size={15} className="mt-0.5 shrink-0 text-accent-green" />
+                <p className="text-sm leading-relaxed text-muted">{point}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-6 flex flex-wrap justify-center gap-2">
             {iacConcepts.map((c) => (
