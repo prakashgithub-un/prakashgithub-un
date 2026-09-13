@@ -1,7 +1,7 @@
 // Central, editable profile configuration.
 // Leave fields empty until you have the real values — nothing here is invented.
 export const profile = {
-  name: "Prakashraj",
+  name: "Prakash",
   initials: "PR",
   role: "DevOps Engineer | Cloud Infrastructure | Kubernetes | Automation",
   roleLong: "DevOps Engineer / Cloud Engineer",
@@ -12,7 +12,7 @@ export const profile = {
   // Fill these in when ready — left blank intentionally.
   github: "https://github.com/prakashgithub-un",
   githubUsername: "prakashgithub-un",
-  linkedin: "https://linkedin.com/prakashin",
+  linkedin: "https://www.linkedin.com/in/prakashin/",
   email: "prakashmanioutbox@gmail.com",
   resume: "",
   portfolio: "",

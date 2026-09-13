@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const siteUrl = "https://prakashraj.dev";
-const title = "Prakashraj — DevOps Engineer | Cloud Infrastructure & Automation";
+const title = "Prakash — DevOps Engineer | Cloud Infrastructure & Automation";
 const description =
   "DevOps Engineer specializing in AWS, Azure, GCP, Kubernetes, Terraform, CI/CD and cloud infrastructure automation.";
 
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     "Infrastructure as Code",
     "Site Reliability",
   ],
-  authors: [{ name: "Prakashraj" }],
+  authors: [{ name: "Prakash" }],
   openGraph: {
     title,
     description,
     url: siteUrl,
-    siteName: "Prakashraj — DevOps Engineer",
+    siteName: "Prakash — DevOps Engineer",
     type: "website",
   },
   twitter: {

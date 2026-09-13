@@ -1,4 +1,4 @@
-# 👋 Hi, I'm Prakashraj
+# 👋 Hi, I'm Prakash
 
 ### DevOps Engineer | Cloud Infrastructure | Kubernetes | Automation
 
@@ -290,7 +290,7 @@ My goal is not simply to deploy infrastructure.
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
-<a href="https://linkedin.com/prakashin">
+<a href="https://www.linkedin.com/in/prakashin/">
 <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
@@ -306,6 +306,6 @@ My goal is not simply to deploy infrastructure.
 
 ### ⚡ Build → Automate → Observe → Improve
 
-**© 2026 Prakashraj**
+**© 2026 Prakash**
 
 </div>
