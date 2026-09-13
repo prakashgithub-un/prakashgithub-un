@@ -8,7 +8,7 @@ export function Projects() {
     <section id="projects" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          eyebrow="05 · Projects"
+          eyebrow="14 · Projects"
           title="Featured Projects"
           description="Real infrastructure work, shown as the architectures behind it."
         />

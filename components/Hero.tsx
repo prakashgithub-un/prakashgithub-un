@@ -32,7 +32,7 @@ export function Hero() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-accent-green" />
             <span className="font-mono text-xs uppercase tracking-wider text-muted">
-              {profile.roleLong} · {profile.location}
+              {profile.headlineLabel}
             </span>
           </motion.div>
 

@@ -12,8 +12,8 @@ export function GithubActivity() {
     <section id="github" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="08 · GitHub"
-          title="Code / Automation / Open Source"
+          eyebrow="17 · GitHub"
+          title="Code / Automation / Infrastructure"
           description={
             username
               ? `Live activity for @${username}.`

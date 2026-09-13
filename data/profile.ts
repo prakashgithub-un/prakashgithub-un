@@ -3,8 +3,9 @@
 export const profile = {
   name: "Prakashraj",
   initials: "PR",
-  role: "DevOps Engineer",
+  role: "DevOps Engineer | Cloud Infrastructure | Kubernetes | Automation",
   roleLong: "DevOps Engineer / Cloud Engineer",
+  careerDirection: "Senior DevOps Engineer / Cloud Engineer / Platform Engineer",
   location: "India",
   status: "OPEN TO OPPORTUNITIES",
 
@@ -14,16 +15,20 @@ export const profile = {
   linkedin: "https://linkedin.com/prakashin",
   email: "prakashmanioutbox@gmail.com",
   resume: "",
+  portfolio: "",
 
   headline: ["BUILDING", "CLOUD INFRASTRUCTURE", "THAT SCALES."],
   headlineHighlights: ["Cloud", "Infrastructure", "Automation"],
+  headlineLabel: "DEVOPS • CLOUD • KUBERNETES • AUTOMATION",
+  positioning:
+    "I build, automate and operate reliable cloud infrastructure across AWS, Azure and Kubernetes environments.",
   subheadline:
-    "DevOps Engineer focused on building reliable cloud infrastructure, automated delivery pipelines, Kubernetes platforms, observability systems and scalable engineering workflows.",
+    "DevOps Engineer focused on cloud infrastructure, Kubernetes, Infrastructure as Code, CI/CD, observability and automation, with a growing focus on cloud architecture, security, platform engineering and scalable production systems.",
 
   about: [
-    "I'm a DevOps Engineer passionate about turning complex infrastructure into reliable, automated and scalable systems.",
-    "My experience spans cloud platforms, Kubernetes, CI/CD, Infrastructure as Code, monitoring and cloud cost optimization.",
-    "I enjoy solving infrastructure problems, improving deployment workflows and building platforms that allow development teams to ship faster and more reliably.",
+    "I'm a DevOps Engineer focused on transforming infrastructure into automated, observable and reliable systems.",
+    "My experience spans AWS, Azure, Kubernetes, Terraform, CI/CD and observability. I enjoy solving infrastructure problems, improving deployment workflows and designing systems that are easier to operate and scale.",
+    "My engineering journey is increasingly focused on cloud architecture, platform engineering, security, advanced Kubernetes and automation.",
   ],
 } as const;
 
@@ -52,16 +57,6 @@ export const metrics = [
   { value: "3", label: "Cloud Platforms" },
   { value: "Multiple", label: "Production Environments" },
   { value: "Terraform", label: "Infrastructure as Code" },
-] as const;
-
-export const currentlyExploring = [
-  "Kubernetes",
-  "Cloud FinOps",
-  "Platform Engineering",
-  "AI Infrastructure",
-  "Cloud Security",
-  "Observability",
-  "Infrastructure Automation",
 ] as const;
 
 export const education = [

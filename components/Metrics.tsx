@@ -40,7 +40,7 @@ export function Metrics() {
   return (
     <section className="relative border-y border-base-border bg-base-900/30 py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading eyebrow="07 · By The Numbers" title="Engineering By Numbers" align="center" />
+        <SectionHeading eyebrow="15 · Engineering Metrics" title="Engineering Metrics" align="center" />
 
         <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {metrics.map((metric, i) => (
